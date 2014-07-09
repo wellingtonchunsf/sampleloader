@@ -1,0 +1,37 @@
+Version 1
+Resolution 1024, 600
+DeviceSize 152, 91
+
+SetLayerEnable 1, 1
+SetLayerBackColor 1, ffffff00
+ImageWrite 1, button - large round bubble - blue, 0, 0
+ImageWrite 1, button - large round bubble - green, 150, 0
+ImageWrite 1, button - large round bubble - orange, 0, 150
+ImageWrite 1, button - large round bubble - yellow, 150, 150
+ImageWrite 1, gold-button, 0, 300
+ImageWrite 1, blue-off, 150, 300
+ImageWrite 1, blue-on, 450, 0
+ImageWrite 1, red-off, 300, 0
+ImageWrite 1, pink-off, 300, 150
+ImageWrite 1, red-on, 300, 300
+ImageWrite 1, gray-off, 451, 150
+ImageWrite 1, green-off, 450, 300
+
+SetLayerEnable 2, 0
+SetLayerBackColor 2, ffffff00
+
+SetLayerEnable 3, 0
+SetLayerBackColor 3, ffffff00
+
+SetLayerEnable 4, 0
+SetLayerBackColor 4, ffffff00
+
+SetLayerEnable 5, 0
+SetLayerBackColor 5, ffffff00
+
+SetLayerEnable 6, 0
+SetLayerBackColor 6, ffffff00
+
+SetLayerEnable 7, 0
+SetLayerBackColor 7, ffffff00
+

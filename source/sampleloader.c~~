@@ -1,0 +1,92 @@
+/* 
+ * Sample Ripdraw program on how to put up simple images
+ *
+ * sampleloader.c
+ *
+ *
+ */
+
+
+#include <stdio.h>
+#include "../include/ripdraw.h"
+#include "../include/sampleloader.h"
+
+#define IMAGE_LIST_LENGTH 4	/* number of images */
+
+int main(int argc, char **argv)
+{
+	int i;
+	int ret;
+
+	/* load the image_list with the image name, layer, x position, y positon */
+	struct image_object image_list[IMAGE_LIST_LENGTH] =
+	{
+		{"small_America",1,	0,0,	0,0},\
+		{"small_America",1,	0,200,	0,0},\
+		{"small_America",1,	0,300,	0,0},\
+		{"small_America",1,	0,400,	0,0}
+	};
+
+
+	/* RdInterfaceInit()
+	 *    Open port on host computer to Ripdraw display
+	 *    initialize Ripdraw library by creating a rd_interface handle
+	 */
+	RD_INTERFACE* rd_interface = RdInterfaceInit("/dev/ttyACM0");
+
+	/* check if verbose is set from command line */
+	if (argc > 1)
+	{
+		rd_interface->verbose = atoi(argv[1]);
+		if (rd_interface->verbose < 0)
+		{
+			rd_interface->verbose = 0;
+		}
+	}
+
+	/* Issue reset to Ripdraw display */
+	ret = Rd_Reset(rd_interface);
+	if (ret != STATUS_OK) return ret;
+
+        ret = enableloadwrite (rd_interface,image_list[1];
+	
+	/*
+	{
+
+
+		ret = Rd_PageToScreen(rd_interface, 1);
+		ret = Rd_PageToScreen(rd_interface, 2);
+		ret = load_1_asia(rd_interface);
+		ret = Rd_ComposeLayersToPage(rd_interface, 1);
+		if (ret >= 0)
+		{
+			ret = Rd_PageToScreen(rd_interface, 1);
+		}
+
+		ret = load_1_america(rd_interface);
+		ret = Rd_ComposeLayersToPage(rd_interface, 1);
+		if (ret >= 0)
+		{
+			ret = Rd_PageToScreen(rd_interface, 1);
+		}
+
+		ret = load_1_australia(rd_interface);
+		ret = Rd_ComposeLayersToPage(rd_interface, 2);
+		if (ret >= 0)
+		{
+		ret = Rd_PageToScreen(rd_interface, 2);
+		}
+
+		for (i=0;i<2;i++){
+				ret = Rd_PageToScreen(rd_interface, 2);
+				ret = Rd_PageToScreen(rd_interface, 1);
+		}
+
+	}
+	*/	
+	ret = RdInterfaceClose(rd_interface);
+
+	printf("\nRet: %d\n", ret);
+	printf("Done!\n");
+	return 0;
+}
